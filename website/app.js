@@ -10,7 +10,7 @@ const apiKey = 'e13f4c94602654795d3bc16e3238340f&units=imperial';
 
 // Create a new date instance dynamically with JS
 const d = new Date();
-const newDate = `${d.getMonth()}.${d.getDate()}.${d.getFullYear()}`;
+const newDate = `${d.getMonth() + 1}.${d.getDate()}.${d.getFullYear()}`;
 
 /* Function called by event listener */
 async function handleGenerateClick() {
@@ -87,7 +87,7 @@ function updateUI(data) {
   [zipInputEl, feelingsTextEl].forEach((el) => el.value = '');
 
   Object.entries(output).forEach(([id, value]) => {
-    document.getElementById(id).textContent = value;
+    document.getElementById(id).innerHTML = value;
   });
 }
 
